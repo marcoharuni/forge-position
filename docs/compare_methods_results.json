@@ -1,0 +1,37 @@
+[
+  {
+    "method": "learned",
+    "train_length": 16,
+    "eval_length": 32,
+    "loss": 2.847032308578491,
+    "accuracy": 0.19758065044879913
+  },
+  {
+    "method": "sinusoidal",
+    "train_length": 16,
+    "eval_length": 32,
+    "loss": 2.523482084274292,
+    "accuracy": 0.3709677457809448
+  },
+  {
+    "method": "rope",
+    "train_length": 16,
+    "eval_length": 32,
+    "loss": 2.2803738117218018,
+    "accuracy": 0.5362903475761414
+  },
+  {
+    "method": "alibi",
+    "train_length": 16,
+    "eval_length": 32,
+    "loss": 2.2493131160736084,
+    "accuracy": 0.524193525314331
+  },
+  {
+    "method": "nope",
+    "train_length": 16,
+    "eval_length": 32,
+    "loss": 2.270136833190918,
+    "accuracy": 0.5161290168762207
+  }
+]
