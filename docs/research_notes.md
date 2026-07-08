@@ -95,3 +95,8 @@ Forgetting Transformer variants, and RoPE limitation papers should be checked
 against the latest paper revisions and official code before being cited as
 production guidance. This repository deliberately avoids claiming exact
 reproduction for YaRN, LongRoPE, or LongRoPE2.
+
+The term "iRoPE" was not added as an implemented method because no reliable,
+canonical source was identified by that exact name during the search pass. If a
+specific paper or implementation is intended, add it here before treating it as
+part of the book's method taxonomy.

@@ -20,5 +20,5 @@ Notebooks:
 - `notebooks/04_kv_cache_position_bugs.ipynb`
 - `notebooks/05_length_extrapolation_lab.ipynb`
 
-Open in Colab note: this repository does not embed badge URLs because the final
-hosting location may change. Add a Colab badge after the Git remote URL is known.
+Each notebook includes an "Open in Colab" badge pointing at
+`marcoharuni/forge-position` on GitHub.
