@@ -60,6 +60,7 @@ uv run python examples/04_alibi_bias.py
 uv run python examples/05_kv_cache_positions.py
 uv run python examples/06_length_extrapolation.py
 uv run python examples/07_compare_methods.py
+uv run python examples/08_rope_intuition_figures.py
 ```
 
 The synthetic training examples are deliberately small and CPU-friendly. Their

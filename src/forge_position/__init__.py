@@ -30,10 +30,15 @@ from .rope_scaling import (
 from .sinusoidal import SinusoidalPositionEncoding, build_sinusoidal_table
 from .tiny_transformer import TinyDecoderOnlyTransformer, TinyTransformerConfig
 from .visualization import (
+    plot_add_vs_rotate,
     plot_alibi_bias,
+    plot_attention_order_blindness,
     plot_length_extrapolation_results,
     plot_position_mapping,
     plot_rope_frequencies,
+    plot_rope_multi_frequency_clock,
+    plot_rope_position_angles,
+    plot_rope_relative_distance,
     plot_rope_rotation_circle,
     plot_sinusoidal_table,
 )
@@ -68,9 +73,14 @@ __all__ = [
     "passkey_accuracy",
     "perplexity_from_loss",
     "plot_alibi_bias",
+    "plot_add_vs_rotate",
+    "plot_attention_order_blindness",
     "plot_length_extrapolation_results",
     "plot_position_mapping",
     "plot_rope_frequencies",
+    "plot_rope_multi_frequency_clock",
+    "plot_rope_position_angles",
+    "plot_rope_relative_distance",
     "plot_rope_rotation_circle",
     "plot_sinusoidal_table",
     "rotate_half",
