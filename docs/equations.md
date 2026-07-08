@@ -22,6 +22,33 @@ R(theta_m) = [[cos(theta_m), -sin(theta_m)],
 
 RoPE applies this rotation to query and key pairs. Values are not rotated.
 
+More generally, attention uses query-key dot products. For token positions `m`
+and `n`, RoPE aims for the score to depend on relative distance:
+
+```text
+f_q(x_m, m)^T f_k(x_n, n) = g(x_m, x_n, m - n)
+```
+
+One block-diagonal construction applies a separate 2 x 2 rotation to each pair
+inside a head:
+
+```text
+f_W(x_m, m) =
+blockdiag(R(m theta_0), R(m theta_1), ..., R(m theta_{d/2-1})) W x_m
+```
+
+with
+
+```text
+theta_i = base^(-2i / d),  i = 0, ..., d/2 - 1
+```
+
+This repository defaults to `base = 10000`, matching the original RoPE
+presentation and many open implementations. Some modern systems use different
+bases, such as larger values for long-context settings; changing the base
+changes every phase and should be treated as part of the experiment or
+checkpoint configuration.
+
 ## RoPE Complex View
 
 Treat a pair `(x_even, x_odd)` as a complex number `z`.
@@ -77,3 +104,16 @@ The code in `rope_scaling.py` uses educational approximations for YaRN-like and
 LongRoPE-like mappings. The papers include additional implementation details,
 search procedures, ramps, or fine-tuning recipes. Do not treat these functions
 as exact reproductions.
+
+`rope_scaling.RotaryEmbedding` also includes a YaRN/NTK-by-parts style cache
+module for study. Its high-level idea is:
+
+```text
+r(i) = L_train * theta_i / (2 pi)
+```
+
+where large `r(i)` corresponds to fast clocks that cycle many times over the
+training window, and small `r(i)` corresponds to slow clocks. Two thresholds,
+`alpha` and `beta`, define a transition region where unscaled frequencies and
+linearly interpolated frequencies are blended. The implementation is designed
+for clarity and tests, not production parity.

@@ -21,6 +21,7 @@ from .metrics import (
 from .nope import HybridPositionPattern, NoPEAttentionConfig
 from .rope import apply_rope, apply_rope_single, build_rope_cache, rotate_half
 from .rope_scaling import (
+    RotaryEmbedding,
     dynamic_ntk_base,
     linear_position_scaling,
     longrope_style_position_map,
@@ -49,6 +50,7 @@ __all__ = [
     "LearnedAbsolutePositionEmbedding",
     "NoPEAttentionConfig",
     "PositionAwareSelfAttention",
+    "RotaryEmbedding",
     "SinusoidalPositionEncoding",
     "TinyDecoderOnlyTransformer",
     "TinyTransformerConfig",

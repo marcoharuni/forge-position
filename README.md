@@ -45,6 +45,7 @@ Generated figures are saved under `docs/figures/`.
 - NoPE
 - hybrid RoPE/NoPE layer patterns
 - linear, NTK-aware, YaRN-like, and LongRoPE-like scaling helpers
+- a `RotaryEmbedding` cache module for studying YaRN/NTK-by-parts scaling
 - KV-cache position ID utilities
 
 YaRN and LongRoPE-style helpers are marked as educational approximations, not
