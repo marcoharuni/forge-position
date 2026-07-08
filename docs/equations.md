@@ -98,15 +98,12 @@ base' = base * ((a * L / L_train) - (a - 1))^(dim / (dim - 2))
 
 where `L` is the requested sequence length and `a` is a scaling factor.
 
-## YaRN and LongRoPE Caveat
+## YaRN / LongRoPE Caveat
 
-The code in `rope_scaling.py` uses educational approximations for YaRN-like and
-LongRoPE-like mappings. The papers include additional implementation details,
-search procedures, ramps, or fine-tuning recipes. Do not treat these functions
-as exact reproductions.
-
-`rope_scaling.RotaryEmbedding` also includes a YaRN/NTK-by-parts style cache
-module for study. Its high-level idea is:
+`rope_scaling.py` contains compact scaling helpers and a `RotaryEmbedding`
+cache module for study. The helpers are intentionally educational; the class
+spells out a YaRN/NTK-by-parts style schedule more explicitly. The high-level
+frequency-region idea is:
 
 ```text
 r(i) = L_train * theta_i / (2 pi)
@@ -115,5 +112,8 @@ r(i) = L_train * theta_i / (2 pi)
 where large `r(i)` corresponds to fast clocks that cycle many times over the
 training window, and small `r(i)` corresponds to slow clocks. Two thresholds,
 `alpha` and `beta`, define a transition region where unscaled frequencies and
-linearly interpolated frequencies are blended. The implementation is designed
-for clarity and tests, not production parity.
+linearly interpolated frequencies are blended.
+
+The papers include additional implementation details, searches, ramps, and
+fine-tuning recipes. Treat these implementations as readable lab code, not
+production parity claims.

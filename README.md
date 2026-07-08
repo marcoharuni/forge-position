@@ -32,7 +32,8 @@ uv run python examples/05_kv_cache_positions.py
 uv run python examples/07_compare_methods.py
 ```
 
-Generated figures are saved under `docs/figures/`.
+Generated figures are saved under `docs/figures/`. The intuition figures are
+created by code in this repository, not copied screenshots.
 
 ## Methods Included
 
@@ -50,6 +51,13 @@ Generated figures are saved under `docs/figures/`.
 
 YaRN and LongRoPE-style helpers are marked as educational approximations, not
 drop-in reproductions of paper or vendor implementations.
+
+## Visual Figures
+
+The RoPE intuition figures live in `notebooks/02_rope_geometry.ipynb` because
+that is where they teach the most: why order matters, add-vs-rotate, position
+as angle, relative distance, and multi-frequency clock hands. Other notebooks
+avoid repeating those visuals and stay focused on their specific labs.
 
 ## Examples
 
@@ -81,7 +89,8 @@ CPU forward/generation paths.
 ## Notebooks
 
 Lightweight notebooks live in `notebooks/`. See `docs/colab.md` for Colab
-setup notes.
+setup notes. The notebooks render saved figures inline so readers see images,
+not raw `Path` objects.
 
 ## Reading With The Book
 

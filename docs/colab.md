@@ -1,16 +1,19 @@
 # Colab
 
-Each notebook is intentionally small and can be adapted for Colab.
+Each notebook is intentionally small and Colab-friendly.
 
-Recommended setup cell:
+The notebooks use this setup pattern:
 
 ```bash
 !curl -LsSf https://astral.sh/uv/install.sh | sh
-!uv sync
+!git clone https://github.com/marcoharuni/forge-position.git
+%cd forge-position
+!/root/.local/bin/uv sync
 ```
 
-If you upload the repository as a zip or clone it in Colab, run notebook cells
-from the repository root so imports resolve through the uv-managed environment.
+If you upload the repository as a zip instead of cloning it, run notebook cells
+from the repository root so imports and generated figure paths resolve
+correctly.
 
 Notebooks:
 
@@ -22,3 +25,7 @@ Notebooks:
 
 Each notebook includes an "Open in Colab" badge pointing at
 `marcoharuni/forge-position` on GitHub.
+
+The RoPE intuition figures are intentionally concentrated in
+`02_rope_geometry.ipynb`. The other notebooks avoid repeating the same visuals
+so each lab remains short and focused.

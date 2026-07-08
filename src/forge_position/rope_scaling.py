@@ -1,9 +1,4 @@
-"""Educational RoPE scaling utilities.
-
-YaRN and LongRoPE-style functions here are clear approximations for learning
-and experimentation. They are not drop-in reproductions of paper or vendor
-implementations.
-"""
+"""Educational RoPE scaling utilities for long-context experiments."""
 
 from __future__ import annotations
 
@@ -68,11 +63,10 @@ def yarn_scaled_rope_cache(
     device: torch.device | str | None = None,
     dtype: torch.dtype | None = None,
 ) -> tuple[torch.Tensor, torch.Tensor]:
-    """Build an educational YaRN-like scaled RoPE cache.
+    """Build a compact YaRN-like scaled RoPE cache.
 
     This blends unscaled low-frequency channels with linearly interpolated
-    higher-frequency channels. It is intentionally documented as an educational
-    approximation, not a reproduction of YaRN's full implementation.
+    higher-frequency channels for learning and small experiments.
     """
 
     if seq_len <= 0 or dim <= 0 or dim % 2 != 0:

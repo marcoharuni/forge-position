@@ -61,9 +61,10 @@ NTK-aware scaling changes the RoPE base as context length grows. Public model
 implementations vary; this repository includes a common educational dynamic
 base approximation.
 
-YaRN and LongRoPE-style scaling are implemented here only as educational
-approximations. The papers include additional choices, searches, ramps, or
-fine-tuning procedures that are not reproduced in this compact lab.
+YaRN and LongRoPE-style scaling are included as educational reference code. The
+compact cache helpers are approximations; the `RotaryEmbedding` class adds a
+more explicit YaRN/NTK-by-parts study path. Neither should be treated as a
+drop-in reproduction of paper or vendor implementations.
 
 Forgetting Transformer adds a forget gate to softmax attention and reports that
 it can work without positional embeddings. It is documented here as related
@@ -93,8 +94,8 @@ research, not implemented as a full architecture.
 The 2025-2026 landscape changes quickly. LongRoPE2, hybrid RoPE/NoPE recipes,
 Forgetting Transformer variants, and RoPE limitation papers should be checked
 against the latest paper revisions and official code before being cited as
-production guidance. This repository deliberately avoids claiming exact
-reproduction for YaRN, LongRoPE, or LongRoPE2.
+production guidance. This repository deliberately avoids claiming production
+parity for YaRN, LongRoPE, or LongRoPE2.
 
 The term "iRoPE" was not added as an implemented method because no reliable,
 canonical source was identified by that exact name during the search pass. If a
