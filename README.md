@@ -87,16 +87,6 @@ Lightweight notebooks live in `notebooks/`. See `docs/colab.md` for Colab
 setup notes. The notebooks render saved figures inline so readers see images,
 not raw `Path` objects.
 
-## Reading With The Book
-
-Use the source files as reference implementations while reading the chapters:
-
-- `sinusoidal.py` for the original Transformer formula
-- `rope.py` for Q/K rotation geometry
-- `alibi.py` for attention-bias methods
-- `kv_cache.py` and `docs/failure_modes.md` for real decode bugs
-- `tiny_transformer.py` for small controlled experiments
-
 ## Research Honesty
 
 The docs cite source papers and official docs checked during repository
