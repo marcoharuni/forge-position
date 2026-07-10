@@ -1,10 +1,5 @@
 # forge-position
 
-Companion repository for Marco Haruni's technical book:
-
-**Positional Encoding in Modern LLMs**  
-*From Sinusoids and RoPE to Long-Context Scaling*
-
 `forge-position` is a clean PyTorch laboratory for learning positional encoding
 from first principles. It includes absolute learned embeddings, sinusoidal
 encodings, RoPE, partial RoPE, interleaved and non-interleaved RoPE, ALiBi,
